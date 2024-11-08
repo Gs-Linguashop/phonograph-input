@@ -1,0 +1,7 @@
+
+---
+name: luna_phonograph_pinyin
+version: "2020.08.03"
+sort: by_weight
+use_preset_vocabulary: false
+...
