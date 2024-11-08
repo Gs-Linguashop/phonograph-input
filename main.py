@@ -44,11 +44,6 @@ def morph_dict_to_map(morph_dict):
     return morph_map
 
 # Main
-# 1. read chars with assigned morphs
-# 2. read morphs and then modify with pre-assigned chars
-# 3. replace unwanted morphs then merge secondary morphs
-# 4. modify the font file and sub with desired displayed form
-# 5. save font and delete excessive glyphs
 
 file_in_dir = 'luna_pinyin.dict.yaml'
 file_header_dir = 'luna_pinyin_header.dict.yaml'
@@ -59,7 +54,7 @@ line_number_content_starts = 36 - 1
 
 pre_assigned_dict = read_dict(src_dir + 'exception_chars.txt')
 morph_dict = read_morphs(src_dir + 'phonographeme_dict.txt',pre_assigned_dict)
-morph_sub_dict = read_dict(src_dir + 'display_mod.txt',delim='\t')
+mod_dict_keys(morph_dict,read_dict(src_dir + 'display_mod.txt',delim='\t'))
 morph_map = morph_dict_to_map(morph_dict)
 
 essay_dict = dict() # [essay entry] : freq 
